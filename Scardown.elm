@@ -8,13 +8,12 @@ type Msg = Update String
 type alias Model = String
 
 view : String -> Html Msg
+
 view model =
     div []
-    [
-          text "ELM Scardown"
-        , div [] [textarea [rows 20, cols 100, onInput Update] []]
-
-        , div [] [Markdown.toHtml [] model] 
+    [   
+          div [style [("float", "left"), ("width", "50%")]] [textarea [rows 100, cols 85, onInput Update] []]
+        , div [style [("float", "left"), ("width", "50%")]] [Markdown.toHtml [] model] 
 
     ]
 update : Msg -> String -> String
